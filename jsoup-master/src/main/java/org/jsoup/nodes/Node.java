@@ -7,7 +7,7 @@ import org.jsoup.select.NodeFilter;
 import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 
-import com.sun.org.apache.bcel.internal.generic.Visitor;
+// import com.sun.org.apache.bcel.internal.generic.Visitor;
 
 import java.io.IOException;
 import java.util.*;
@@ -54,7 +54,7 @@ public abstract class Node implements Cloneable {
      *
      * @param attributeKey The attribute key.
      * @return The attribute, or empty string if not present (to avoid nulls).
-     * @see #attributes()
+     *
      * @see #hasAttr(String)
      * @see #absUrl(String)
      */
@@ -168,7 +168,7 @@ public abstract class Node implements Cloneable {
      * <p>
      * If the attribute value is already absolute (i.e. it starts with a protocol, like
      * <code>http://</code> or <code>https://</code> etc), and it successfully parses as a URL, the attribute is
-     * returned directly. Otherwise, it is treated as a URL relative to the element's {@link #baseUri}, and made
+     * returned directly. Otherwise, it is treated as a URL relative to the element's , and made
      * absolute using that.
      * </p>
      * <p>
