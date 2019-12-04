@@ -7,6 +7,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.DocumentType;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
+import org.jsoup.nodes.attributesVisitor;
 
 import java.util.ArrayList;
 
@@ -329,7 +330,7 @@ enum HtmlTreeBuilderState {
                         Element html = tb.getStack().get(0);
                         for (Attribute attribute : startTag.getAttributes()) {
                             if (!html.hasAttr(attribute.getKey()))
-                                html.attributes().put(attribute);
+                            	((Attributes)(html.accept(new attributesVisitor()))).put(attribute);
                         }
                     } else if (StringUtil.inSorted(name, Constants.InBodyStartToHead)) {
                         return tb.process(t, InHead);
@@ -344,7 +345,7 @@ enum HtmlTreeBuilderState {
                             Element body = stack.get(1);
                             for (Attribute attribute : startTag.getAttributes()) {
                                 if (!body.hasAttr(attribute.getKey()))
-                                    body.attributes().put(attribute);
+                                	((Attributes)(body.accept(new attributesVisitor()))).put(attribute);
                             }
                         }
                     } else if (name.equals("frameset")) {
@@ -641,7 +642,7 @@ enum HtmlTreeBuilderState {
                             }
 
                             Element adopter = new Element(formatEl.tag(), tb.getBaseUri());
-                            adopter.attributes().addAll(formatEl.attributes());
+                           ( (Attributes)(adopter.accept(new attributesVisitor()))).addAll((Attributes)(formatEl.accept(new attributesVisitor())));
                             Node[] childNodes = furthestBlock.childNodes().toArray(new Node[0]);
                             for (Node childNode : childNodes) {
                                 adopter.appendChild(childNode); // append will reparent. thus the clone to avoid concurrent mod.

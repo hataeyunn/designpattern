@@ -3,6 +3,7 @@ package org.jsoup.helper;
 import org.jsoup.internal.StringUtil;
 import org.jsoup.nodes.Attribute;
 import org.jsoup.nodes.Attributes;
+import org.jsoup.nodes.attributesVisitor;
 import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 import org.w3c.dom.Comment;
@@ -124,7 +125,7 @@ public class W3CDom {
         }
 
         private void copyAttributes(org.jsoup.nodes.Node source, Element el) {
-            for (Attribute attribute : source.attributes()) {
+            for (Attribute attribute : (Attributes)(source.accept(new attributesVisitor()))) {
                 // valid xml attribute names are: ^[a-zA-Z_:][-a-zA-Z0-9_:.]
                 String key = attribute.getKey().replaceAll("[^-a-zA-Z0-9_:.]", "");
                 if (key.matches("[a-zA-Z_:][-a-zA-Z0-9_:.]*"))
@@ -138,7 +139,7 @@ public class W3CDom {
         private String updateNamespaces(org.jsoup.nodes.Element el) {
             // scan the element for namespace declarations
             // like: xmlns="blah" or xmlns:prefix="blah"
-            Attributes attributes = el.attributes();
+            Attributes attributes = (Attributes)(el.accept(new attributesVisitor()));
             for (Attribute attr : attributes) {
                 String key = attr.getKey();
                 String prefix;

@@ -38,13 +38,13 @@ import static org.jsoup.internal.Normalizer.normalize;
  * @author Jonathan Hedley, jonathan@hedley.net
  */
 public class Element extends Node {
-    private static final List<Node> EMPTY_NODES = Collections.emptyList();
+    protected static final List<Node> EMPTY_NODES = Collections.emptyList();
     private static final Pattern classSplit = Pattern.compile("\\s+");
-    private Tag tag;
+    protected Tag tag;
     private WeakReference<List<Element>> shadowChildrenRef; // points to child elements shadowed from node children
     List<Node> childNodes;
-    private Attributes attributes;
-    private String baseUri;
+    protected Attributes attributes;
+    protected String baseUri;
 
     /**
      * Create a new, standalone element.
@@ -83,41 +83,50 @@ public class Element extends Node {
     public Element(Tag tag, String baseUri) {
         this(tag, baseUri, null);
     }
-
+    
+    public Object accept(DPNodeVisitor v) {
+    	return v.visit(this);
+    }
+/*
     protected List<Node> ensureChildNodes() {
         if (childNodes == EMPTY_NODES) {
             childNodes = new NodeList(this, 4);
         }
         return childNodes;
     }
-
+    */
+/*
     @Override
     protected boolean hasAttributes() {
         return attributes != null;
     }
-
+*/
+    /*
     @Override
     public Attributes attributes() {
         if (!hasAttributes())
             attributes = new Attributes();
         return attributes;
     }
-
+*/
+   /*
     @Override
     public String baseUri() {
         return baseUri;
     }
-
+*/
+    /*
     @Override
     protected void doSetBaseUri(String baseUri) {
         this.baseUri = baseUri;
     }
-
+*/
+    /*
     @Override
     public int childNodeSize() {
         return childNodes.size();
     }
-
+*/
     @Override
     public String nodeName() {
         return tag.getName();
@@ -180,7 +189,7 @@ public class Element extends Node {
      * @return The id attribute, if present, or an empty string if not.
      */
     public String id() {
-        return attributes().getIgnoreCase("id");
+        return ((Attributes)(this.accept(new attributesVisitor()))).getIgnoreCase("id");
     }
 
     /**
@@ -205,7 +214,7 @@ public class Element extends Node {
      * @return this element
      */
     public Element attr(String attributeKey, boolean attributeValue) {
-        attributes().put(attributeKey, attributeValue);
+    	((Attributes)(this.accept(new attributesVisitor()))).put(attributeKey, attributeValue);
         return this;
     }
 
@@ -223,7 +232,7 @@ public class Element extends Node {
      * @return a map of {@code key=value} custom data attributes.
      */
     public Map<String, String> dataset() {
-        return attributes().dataset();
+        return ((Attributes)(this.accept(new attributesVisitor()))).dataset();
     }
 
     @Override
@@ -413,7 +422,7 @@ public class Element extends Node {
 
         // was - Node#addChildren(child). short-circuits an array create and a loop.
         reparentChild(child);
-        ensureChildNodes();
+        this.accept(new ensureChildNodesVisitor());
         childNodes.add(child);
         child.setSiblingIndex(childNodes.size() - 1);
         return this;
@@ -456,7 +465,7 @@ public class Element extends Node {
      */
     public Element insertChildren(int index, Collection<? extends Node> children) {
         Validate.notNull(children, "Children collection to be inserted must not be null.");
-        int currentSize = childNodeSize();
+        int currentSize = (int)(this.accept(new childnodeSizeVisitor()));
         if (index < 0) index += currentSize +1; // roll around
         Validate.isTrue(index >= 0 && index <= currentSize, "Insert position out of bounds.");
 
@@ -477,7 +486,7 @@ public class Element extends Node {
      */
     public Element insertChildren(int index, Node... children) {
         Validate.notNull(children, "Children collection to be inserted must not be null.");
-        int currentSize = childNodeSize();
+        int currentSize = (int)(this.accept(new childnodeSizeVisitor()));
         if (index < 0) index += currentSize +1; // roll around
         Validate.isTrue(index >= 0 && index <= currentSize, "Insert position out of bounds.");
 
@@ -493,7 +502,7 @@ public class Element extends Node {
      *  {@code parent.appendElement("h1").attr("id", "header").text("Welcome");}
      */
     public Element appendElement(String tagName) {
-        Element child = new Element(Tag.valueOf(tagName, NodeUtils.parser(this).settings()), baseUri());
+        Element child = new Element(Tag.valueOf(tagName, NodeUtils.parser(this).settings()), (String)(this.accept(new baseUriVisitor())));
         appendChild(child);
         return child;
     }
@@ -506,7 +515,7 @@ public class Element extends Node {
      *  {@code parent.prependElement("h1").attr("id", "header").text("Welcome");}
      */
     public Element prependElement(String tagName) {
-        Element child = new Element(Tag.valueOf(tagName, NodeUtils.parser(this).settings()), baseUri());
+        Element child = new Element(Tag.valueOf(tagName, NodeUtils.parser(this).settings()), (String)(this.accept(new baseUriVisitor())));
         prependChild(child);
         return child;
     }
@@ -545,7 +554,7 @@ public class Element extends Node {
      */
     public Element append(String html) {
         Validate.notNull(html);
-        List<Node> nodes = NodeUtils.parser(this).parseFragmentInput(html, this, baseUri());
+        List<Node> nodes = NodeUtils.parser(this).parseFragmentInput(html, this, (String)(this.accept(new baseUriVisitor())));
         addChildren(nodes.toArray(new Node[0]));
         return this;
     }
@@ -558,7 +567,7 @@ public class Element extends Node {
      */
     public Element prepend(String html) {
         Validate.notNull(html);
-        List<Node> nodes = NodeUtils.parser(this).parseFragmentInput(html, this, baseUri());
+        List<Node> nodes = NodeUtils.parser(this).parseFragmentInput(html, this, (String)(this.accept(new baseUriVisitor())));
         addChildren(0, nodes.toArray(new Node[0]));
         return this;
     }
@@ -1265,9 +1274,9 @@ public class Element extends Node {
     public Element classNames(Set<String> classNames) {
         Validate.notNull(classNames);
         if (classNames.isEmpty()) {
-            attributes().remove("class");
+        	((Attributes)(this.accept(new attributesVisitor()))).remove("class");
         } else {
-            attributes().put("class", StringUtil.join(classNames, " "));
+        	((Attributes)(this.accept(new attributesVisitor()))).put("class", StringUtil.join(classNames, " "));
         }
         return this;
     }
@@ -1279,7 +1288,7 @@ public class Element extends Node {
      */
     // performance sensitive
     public boolean hasClass(String className) {
-        final String classAttr = attributes().getIgnoreCase("class");
+        final String classAttr = ((Attributes)(this.accept(new attributesVisitor()))).getIgnoreCase("class");
         final int len = classAttr.length();
         final int wantLen = className.length();
 
@@ -1509,7 +1518,7 @@ public class Element extends Node {
         return  (Element) super.filter(nodeFilter);
     }
 
-    private static final class NodeList extends ChangeNotifyingArrayList<Node> {
+    public static final class NodeList extends ChangeNotifyingArrayList<Node> {
         private final Element owner;
 
         NodeList(Element owner, int initialCapacity) {

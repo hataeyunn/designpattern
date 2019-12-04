@@ -82,6 +82,8 @@ public class HtmlToPlainText {
                 append("  ");
             else if (StringUtil.in(name, "p", "h1", "h2", "h3", "h4", "h5", "tr"))
                 append("\n");
+            
+   
         }
 
         // hit when all of the node's children (if any) have been visited

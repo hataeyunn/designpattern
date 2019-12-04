@@ -8,6 +8,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
+import org.jsoup.nodes.attributesVisitor;
+import org.jsoup.nodes.baseUriVisitor;
 import org.jsoup.parser.ParseErrorList;
 import org.jsoup.parser.Parser;
 import org.jsoup.parser.Tag;
@@ -53,7 +55,7 @@ public class Cleaner {
     public Document clean(Document dirtyDocument) {
         Validate.notNull(dirtyDocument);
 
-        Document clean = Document.createShell(dirtyDocument.baseUri());
+        Document clean = Document.createShell((String)(dirtyDocument.accept(new baseUriVisitor())));
         if (dirtyDocument.body() != null) // frameset documents won't have a body. the clean doc will have empty body.
             copySafeNodes(dirtyDocument.body(), clean.body());
 
@@ -74,7 +76,7 @@ public class Cleaner {
     public boolean isValid(Document dirtyDocument) {
         Validate.notNull(dirtyDocument);
 
-        Document clean = Document.createShell(dirtyDocument.baseUri());
+        Document clean = Document.createShell((String)(dirtyDocument.accept(new baseUriVisitor())));
         int numDiscarded = copySafeNodes(dirtyDocument.body(), clean.body());
         return numDiscarded == 0
             && dirtyDocument.head().childNodes().isEmpty(); // because we only look at the body, but we start from a shell, make sure there's nothing in the head
@@ -146,10 +148,10 @@ public class Cleaner {
     private ElementMeta createSafeElement(Element sourceEl) {
         String sourceTag = sourceEl.tagName();
         Attributes destAttrs = new Attributes();
-        Element dest = new Element(Tag.valueOf(sourceTag), sourceEl.baseUri(), destAttrs);
+        Element dest = new Element(Tag.valueOf(sourceTag), (String)(sourceEl.accept(new baseUriVisitor())), destAttrs);
         int numDiscarded = 0;
 
-        Attributes sourceAttrs = sourceEl.attributes();
+        Attributes sourceAttrs = (Attributes)(sourceEl.accept(new attributesVisitor()));
         for (Attribute sourceAttr : sourceAttrs) {
             if (whitelist.isSafeAttribute(sourceTag, sourceEl, sourceAttr))
                 destAttrs.put(sourceAttr);

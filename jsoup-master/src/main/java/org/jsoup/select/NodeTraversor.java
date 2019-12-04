@@ -3,6 +3,7 @@ package org.jsoup.select;
 import org.jsoup.helper.Validate;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
+import org.jsoup.nodes.childnodeSizeVisitor;
 import org.jsoup.select.NodeFilter.FilterResult;
 
 /**
@@ -43,7 +44,7 @@ public class NodeTraversor {
         
         while (node != null) {
             visitor.head(node, depth);
-            if (node.childNodeSize() > 0) {
+            if (((int)(node.accept(new childnodeSizeVisitor()))) > 0) {
                 node = node.childNode(0);
                 depth++;
             } else {
@@ -87,7 +88,7 @@ public class NodeTraversor {
             if (result == FilterResult.STOP)
                 return result;
             // Descend into child nodes:
-            if (result == FilterResult.CONTINUE && node.childNodeSize() > 0) {
+            if (result == FilterResult.CONTINUE && ((int)(node.accept(new childnodeSizeVisitor()))) > 0) {
                 node = node.childNode(0);
                 ++depth;
                 continue;

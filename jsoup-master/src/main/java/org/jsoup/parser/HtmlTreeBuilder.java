@@ -2,6 +2,7 @@ package org.jsoup.parser;
 
 import org.jsoup.helper.Validate;
 import org.jsoup.internal.StringUtil;
+import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.CDataNode;
 import org.jsoup.nodes.Comment;
 import org.jsoup.nodes.DataNode;
@@ -10,6 +11,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.nodes.FormElement;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
+import org.jsoup.nodes.attributesVisitor;
 import org.jsoup.select.Elements;
 
 import java.io.Reader;
@@ -93,6 +95,7 @@ public class HtmlTreeBuilder extends TreeBuilder {
 
             // initialise the tokeniser state:
             String contextTag = context.tagName();
+            System.out.println(contextTag);
             if (StringUtil.in(contextTag, "title", "textarea"))
                 tokeniser.transition(TokeniserState.Rcdata);
             else if (StringUtil.in(contextTag, "iframe", "noembed", "noframes", "style", "xmp"))
@@ -625,7 +628,7 @@ public class HtmlTreeBuilder extends TreeBuilder {
         // same if: same namespace, tag, and attributes. Element.equals only checks tag, might in future check children
         return a.normalName().equals(b.normalName()) &&
                 // a.namespace().equals(b.namespace()) &&
-                a.attributes().equals(b.attributes());
+        		((Attributes)(a.accept(new attributesVisitor()))).equals((Attributes)(b.accept(new attributesVisitor())));
         // todo: namespaces
     }
 
@@ -656,7 +659,7 @@ public class HtmlTreeBuilder extends TreeBuilder {
             skip = false; // can only skip increment from 4.
             Element newEl = insertStartTag(entry.normalName()); // todo: avoid fostering here?
             // newEl.namespace(entry.namespace()); // todo: namespaces
-            newEl.attributes().addAll(entry.attributes());
+            ((Attributes)(newEl.accept(new attributesVisitor()))).addAll((Attributes)(entry.accept(new attributesVisitor())));
 
             // 10. replace entry with new entry
             formattingElements.set(pos, newEl);

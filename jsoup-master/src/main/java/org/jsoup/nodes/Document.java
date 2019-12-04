@@ -107,7 +107,7 @@ public class Document extends Element {
      @return new element
      */
     public Element createElement(String tagName) {
-        return new Element(Tag.valueOf(tagName, ParseSettings.preserveCase), this.baseUri());
+        return new Element(Tag.valueOf(tagName, ParseSettings.preserveCase), (String)(this.accept(new baseUriVisitor())));
     }
 
     /**
@@ -165,7 +165,7 @@ public class Document extends Element {
             List<Node> toMove = new ArrayList<>();
             for (int i = 1; i < elements.size(); i++) {
                 Node dupe = elements.get(i);
-                toMove.addAll(dupe.ensureChildNodes());
+                toMove.addAll((List<Node>)(dupe.accept(new ensureChildNodesVisitor())));
                 dupe.remove();
             }
 
@@ -183,7 +183,7 @@ public class Document extends Element {
         if (node.nodeName().equals(tag))
             return (Element) node;
         else {
-            int size = node.childNodeSize();
+            int size = (int)(node.accept(new childnodeSizeVisitor()));
             for (int i = 0; i < size; i++) {
                 Element found = findFirstElementByTagName(tag, node.childNode(i));
                 if (found != null)

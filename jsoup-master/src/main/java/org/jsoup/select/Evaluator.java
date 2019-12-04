@@ -1,6 +1,7 @@
 package org.jsoup.select;
 
 import org.jsoup.helper.Validate;
+import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Comment;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.DocumentType;
@@ -9,6 +10,8 @@ import org.jsoup.nodes.Node;
 import org.jsoup.nodes.PseudoTextElement;
 import org.jsoup.nodes.TextNode;
 import org.jsoup.nodes.XmlDeclaration;
+import org.jsoup.nodes.attributesVisitor;
+import org.jsoup.nodes.baseUriVisitor;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -157,7 +160,7 @@ public abstract class Evaluator {
 
         @Override
         public boolean matches(Element root, Element element) {
-            List<org.jsoup.nodes.Attribute> values = element.attributes().asList();
+            List<org.jsoup.nodes.Attribute> values = ((Attributes)(element.accept(new attributesVisitor()))).asList();
             for (org.jsoup.nodes.Attribute attribute : values) {
                 if (lowerCase(attribute.getKey()).startsWith(keyPrefix))
                     return true;
@@ -763,7 +766,7 @@ public abstract class Evaluator {
             List<TextNode> textNodes = element.textNodes();
             for (TextNode textNode : textNodes) {
                 PseudoTextElement pel = new PseudoTextElement(
-                    org.jsoup.parser.Tag.valueOf(element.tagName()), element.baseUri(), element.attributes());
+                    org.jsoup.parser.Tag.valueOf(element.tagName()), (String)(element.accept(new baseUriVisitor())), (Attributes)(element.accept(new attributesVisitor())));
                 textNode.replaceWith(pel);
                 pel.appendChild(textNode);
             }

@@ -60,7 +60,7 @@ public class FormElement extends Element {
      * document's base URI when parsing.
      */
     public Connection submit() {
-        String action = hasAttr("action") ? absUrl("action") : baseUri();
+        String action = hasAttr("action") ? absUrl("action") : (String)(this.accept(new baseUriVisitor()));
         Validate.notEmpty(action, "Could not determine a form action URL for submit. Ensure you set a base URI when parsing.");
         Connection.Method method = attr("method").toUpperCase().equals("POST") ?
                 Connection.Method.POST : Connection.Method.GET;

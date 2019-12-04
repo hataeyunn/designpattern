@@ -63,7 +63,7 @@ public class XmlDeclaration extends LeafNode {
     }
 
     private void getWholeDeclaration(Appendable accum, Document.OutputSettings out) throws IOException {
-        for (Attribute attribute : attributes()) {
+        for (Attribute attribute : ((Attributes)(this.accept(new attributesVisitor())))) {
             if (!attribute.getKey().equals(nodeName())) { // skips coreValue (name)
                 accum.append(' ');
                 attribute.html(accum, out);

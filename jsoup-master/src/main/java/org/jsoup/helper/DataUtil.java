@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.XmlDeclaration;
+import org.jsoup.nodes.childnodeSizeVisitor;
 import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
@@ -132,7 +133,7 @@ public final class DataUtil {
             }
 
             // look for <?xml encoding='ISO-8859-1'?>
-            if (foundCharset == null && doc.childNodeSize() > 0) {
+            if (foundCharset == null && ((int)(doc.accept(new childnodeSizeVisitor()))) > 0) {
                 Node first = doc.childNode(0);
                 XmlDeclaration decl = null;
                 if (first instanceof XmlDeclaration)
