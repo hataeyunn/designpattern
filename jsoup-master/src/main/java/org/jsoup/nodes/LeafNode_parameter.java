@@ -11,7 +11,7 @@ public class LeafNode_parameter extends parameter{
     private String pubSysKey;
     private boolean IsProcessingInstruction;
 
-    LeafNode_parameter(String type){
+    public LeafNode_parameter(String type){
         super.type = type;
     }
 
