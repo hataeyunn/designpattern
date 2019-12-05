@@ -65,6 +65,7 @@ public class DataNode extends LeafNode {
      @param baseUri bass URI
      @return new DataNode
      */
+    @Deprecated
     public static DataNode createFromEncoded(String encodedData, String baseUri) {
         String data = Entities.unescape(encodedData);
         LeafNodeDirector leaf = new LeafNodeDirector();
