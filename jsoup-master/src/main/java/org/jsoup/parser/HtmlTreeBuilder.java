@@ -2,16 +2,7 @@ package org.jsoup.parser;
 
 import org.jsoup.helper.Validate;
 import org.jsoup.internal.StringUtil;
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.CDataNode;
-import org.jsoup.nodes.Comment;
-import org.jsoup.nodes.DataNode;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.FormElement;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.TextNode;
-import org.jsoup.nodes.attributesVisitor;
+import org.jsoup.nodes.*;
 import org.jsoup.select.Elements;
 
 import java.io.Reader;
@@ -249,7 +240,23 @@ public class HtmlTreeBuilder extends TreeBuilder {
 
     FormElement insertForm(Token.StartTag startTag, boolean onStack) {
         Tag tag = Tag.valueOf(startTag.name(), settings);
-        FormElement el = new FormElement(tag, baseUri, startTag.attributes);
+
+
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new FormElementBuilder("FormElement",tag, baseUri, startTag.attributes);
+
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+
+        MakeElement factory = new MakeElement();
+
+        FormElement el = (FormElement) factory.createnode(params);
+
+
+
+
+        FormElement el = new FormElement();
         setFormElement(el);
         insertNode(el);
         if (onStack)

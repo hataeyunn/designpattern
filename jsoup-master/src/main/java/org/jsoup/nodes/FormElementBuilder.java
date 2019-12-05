@@ -7,7 +7,7 @@ public class FormElementBuilder extends ElementBuilder {
     private Attributes attributes;
     private Tag tag;
 
-    FormElementBuilder (String type, Tag _tag, String _baseUri, Attributes _attributes){
+    public FormElementBuilder (String type, Tag _tag, String _baseUri, Attributes _attributes){
         super.type = type;
         baseUri = _baseUri;
         attributes = _attributes;

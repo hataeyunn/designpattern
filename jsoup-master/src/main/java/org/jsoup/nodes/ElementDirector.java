@@ -2,10 +2,10 @@ package org.jsoup.nodes;
 
 public class ElementDirector {
     public ElementBuilder ElemBuilder;
-    private void setElementBuilder(ElementBuilder element){
+    public void setElementBuilder(ElementBuilder element){
         ElemBuilder = element;
     }
-    public parameter getelement(){
+    public element_parameter getelement(){
         return ElemBuilder.getParameter();
     }
     public void constructparameter(){
