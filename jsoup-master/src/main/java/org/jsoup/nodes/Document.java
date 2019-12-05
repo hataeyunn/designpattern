@@ -42,7 +42,15 @@ public class Document extends Element {
     public static Document createShell(String baseUri) {
         Validate.notNull(baseUri);
 
-        Document doc = new Document(baseUri);
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new DocumentBuilder("Document",baseUri);
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+        MakeElement factory = new MakeElement();
+
+
+        Document doc =(Document) factory.createnode(params);
         doc.parser = doc.parser();
         Element html = doc.appendElement("html");
         html.appendElement("head");

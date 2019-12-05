@@ -7,7 +7,7 @@ public class PseudoTextElementBuilder extends ElementBuilder {
     private Attributes attributes;
     private Tag tag;
 
-    PseudoTextElementBuilder (String type, Tag _tag, String _baseUri, Attributes _attributes){
+    public PseudoTextElementBuilder (String type, Tag _tag, String _baseUri, Attributes _attributes){
         super.type = type;
         baseUri = _baseUri;
         attributes = _attributes;

@@ -14,7 +14,16 @@ final class NodeUtils {
      */
     static Document.OutputSettings outputSettings(Node node) {
         Document owner = node.ownerDocument();
-        return owner != null ? owner.outputSettings() : (new Document("")).outputSettings();
+
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new DocumentBuilder("Document","");
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+        MakeElement factory = new MakeElement();
+
+
+        return owner != null ? owner.outputSettings() : ((Document) factory.createnode(params)).outputSettings();
     }
 
     /**

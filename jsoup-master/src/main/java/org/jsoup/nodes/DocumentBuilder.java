@@ -3,7 +3,7 @@ package org.jsoup.nodes;
 public class DocumentBuilder extends ElementBuilder {
     private String baseUri;
 
-    DocumentBuilder (String type, String _baseUri){
+    public DocumentBuilder (String type, String _baseUri){
         super.type = type;
         baseUri = _baseUri;
     }

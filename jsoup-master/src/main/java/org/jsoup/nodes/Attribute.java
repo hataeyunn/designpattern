@@ -102,9 +102,16 @@ public class Attribute implements Map.Entry<String, String>, Cloneable  {
      */
     public String html() {
         StringBuilder sb = StringUtil.borrowBuilder();
-        
+
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new DocumentBuilder("Document","");
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+        MakeElement factory = new MakeElement();
+
         try {
-        	html(sb, (new Document("")).outputSettings());
+        	html(sb, ((Document) factory.createnode(params)).outputSettings());
         } catch(IOException exception) {
         	throw new SerializationException(exception);
         }

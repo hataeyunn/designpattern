@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab8cf4d-3f21-4c7f-9298-0a3519f1608f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DataNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DataNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeLeafnode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeLeafnode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/helper/DataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/helper/DataUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DocumentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DocumentBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/NodeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/NodeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElementBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElementBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/TreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/TreeBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/select/Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/select/Evaluator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,52 +21,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeLeafnode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DataNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeElement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="46" />
+            <state relative-caret-position="171">
+              <caret line="9" column="47" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/ElementDirector.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/select/Evaluator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="307">
+              <caret line="739" column="28" lean-forward="true" selection-start-line="739" selection-start-column="28" selection-end-line="739" selection-end-column="28" />
               <folding>
-                <element signature="e#154#155#0" expanded="true" />
-                <element signature="e#191#192#0" expanded="true" />
-                <element signature="e#226#227#0" expanded="true" />
-                <element signature="e#275#276#0" expanded="true" />
+                <element signature="e#20725#20726#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/ensureChildNodesVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -77,43 +51,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Node.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/parser/TreeBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="298">
+              <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="37" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/LeafNodeDirector.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElementBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding>
-                <element signature="e#159#160#0" expanded="true" />
-                <element signature="e#197#198#0" expanded="true" />
-                <element signature="e#233#234#0" expanded="true" />
-                <element signature="e#282#283#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="254" column="8" selection-start-line="254" selection-start-column="8" selection-end-line="254" selection-end-column="8" />
+            <state relative-caret-position="171">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/FormElementBuilder.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/NodeUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="25" column="94" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Entities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="25" column="89" selection-start-line="25" selection-start-column="89" selection-end-line="25" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/XmlDeclaration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/parameter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <caret line="10" column="75" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -131,6 +126,11 @@
     <findStrings>
       <find>new FormElement</find>
       <find>dataNode(</find>
+      <find>FormElement</find>
+      <find>new</find>
+      <find>new Document</find>
+      <find>new document</find>
+      <find>new pseudotextelement</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,8 +142,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/ParameterBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/ElementBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DocumentBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElementBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/CDataNodeBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/LeafNodeBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/TextNodeBuilder.java" />
@@ -162,6 +160,15 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeLeafnode.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DataNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DocumentBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/parser/TreeBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/helper/DataUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/NodeUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/XmlDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElementBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/select/Evaluator.java" />
       </list>
     </option>
   </component>
@@ -278,7 +285,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575574386084" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575575527608" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -400,12 +407,12 @@
       <updated>1575473069820</updated>
       <workItem from="1575473075521" duration="11436000" />
       <workItem from="1575534838868" duration="4692000" />
-      <workItem from="1575570210038" duration="4173000" />
+      <workItem from="1575570210038" duration="5314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20301000" />
+    <option name="totallyTimeSpent" value="21442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -503,13 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="75" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/TextNodeBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -601,13 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/XmlDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="34" column="86" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/XmlDeclarationBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -636,13 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Element.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -657,32 +643,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElementBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/FormElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DocumentBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -704,13 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/parameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -984,26 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/ElementDirector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#154#155#0" expanded="true" />
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DataNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -1018,6 +955,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="248" column="38" lean-forward="true" selection-start-line="248" selection-start-column="38" selection-end-line="248" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/ElementDirector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/DocumentBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding>
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="52" column="60" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="52" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/helper/DataUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="99" column="57" selection-start-line="93" selection-start-column="12" selection-end-line="99" selection-end-column="57" />
+          <folding>
+            <element signature="e#9295#9296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="105" column="8" lean-forward="true" selection-start-line="105" selection-start-column="8" selection-end-line="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Entities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="25" column="89" selection-start-line="25" selection-start-column="89" selection-end-line="25" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/NodeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="25" column="94" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/XmlDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/parameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="75" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1025,10 +1063,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/parser/TreeBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="254" column="8" selection-start-line="254" selection-start-column="8" selection-end-line="254" selection-end-column="8" />
+        <state relative-caret-position="298">
+          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="37" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/MakeElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/PseudoTextElementBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/select/Evaluator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="739" column="28" lean-forward="true" selection-start-line="739" selection-start-column="28" selection-end-line="739" selection-end-column="28" />
+          <folding>
+            <element signature="e#20725#20726#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
