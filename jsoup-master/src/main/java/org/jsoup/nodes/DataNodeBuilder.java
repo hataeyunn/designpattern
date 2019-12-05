@@ -1,7 +1,5 @@
 package org.jsoup.nodes;
 
-import sun.security.pkcs11.wrapper.CK_DATE;
-
 public class DataNodeBuilder extends LeafNodeBuilder {
     String data;
     String baseUri = null;

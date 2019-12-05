@@ -1,6 +1,5 @@
 package org.jsoup.nodes;
 
-import com.sun.tools.classfile.ConstantPool;
 
 public class TextNodeBuilder extends LeafNodeBuilder {
     String text;

@@ -1,6 +1,5 @@
 package org.jsoup.nodes;
 
-import sun.util.resources.ext.CalendarData_nl;
 
 public class XmlDeclarationBuilder extends LeafNodeBuilder {
     String name;
