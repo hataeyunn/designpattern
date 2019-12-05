@@ -4,10 +4,10 @@ import org.jsoup.parser.Tag;
 
 public class FormElementBuilder extends ElementBuilder {
     private String baseUri;
-    private Attribute attributes;
+    private Attributes attributes;
     private Tag tag;
 
-    FormElementBuilder (String type, Tag _tag, String _baseUri, Attribute _attributes){
+    FormElementBuilder (String type, Tag _tag, String _baseUri, Attributes _attributes){
         super.type = type;
         baseUri = _baseUri;
         attributes = _attributes;
