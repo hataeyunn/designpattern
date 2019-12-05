@@ -9,8 +9,6 @@ public class baseUriVisitor implements DPNodeVisitor {
 
 	@Override
 	public Object visit(LeafNode leafnode) {
-
 		return leafnode.hasParent() ? leafnode.parent().accept(new baseUriVisitor()) : "";
 	}
-
 }

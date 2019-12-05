@@ -5,8 +5,13 @@ import org.jsoup.helper.Validate;
 import org.jsoup.parser.ParseSettings;
 import org.jsoup.parser.Parser;
 import org.jsoup.parser.Tag;
+import org.jsoup.select.Collector;
 import org.jsoup.select.Elements;
+import org.jsoup.select.MarkNodeTraversor;
+import org.jsoup.select.NodeTraversor;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
@@ -594,5 +599,23 @@ public class Document extends Element {
     public Document parser(Parser parser) {
         this.parser = parser;
         return this;
+    }
+
+    public void markdown(String filename) throws IOException {
+        String result = null;
+        FileWriter fw = new FileWriter(filename);
+        /*
+        for(int i=1; i<11; i++) {
+            String data = i+" 번째 줄입니다.\r\n";
+            fw.write(data);
+        }
+        */
+
+
+        Elements elements = new Elements();
+        result = MarkNodeTraversor.traverse(this);
+        fw.write(result);
+        fw.close();
+
     }
 }

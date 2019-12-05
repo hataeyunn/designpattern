@@ -11,7 +11,6 @@ public class attributesVisitor implements DPNodeVisitor {
 
 	@Override
 	public Object visit(LeafNode leafnode) {
-
 		leafnode.ensureAttributes();
         return (Attributes) leafnode.value;
 	}	

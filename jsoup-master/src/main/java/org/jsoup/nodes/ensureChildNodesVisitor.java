@@ -14,7 +14,6 @@ public class ensureChildNodesVisitor implements DPNodeVisitor{
 
 	@Override
 	public Object visit(LeafNode leafnode) {
-
 	    return leafnode.EmptyNodes;
 	}
 

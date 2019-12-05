@@ -54,7 +54,6 @@ public abstract class Node implements Cloneable {
      *
      * @param attributeKey The attribute key.
      * @return The attribute, or empty string if not present (to avoid nulls).
-     *
      * @see #hasAttr(String)
      * @see #absUrl(String)
      */
