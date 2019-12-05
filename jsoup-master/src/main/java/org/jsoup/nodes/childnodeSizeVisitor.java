@@ -9,7 +9,6 @@ public class childnodeSizeVisitor implements DPNodeVisitor {
 
 	@Override
 	public Object visit(LeafNode leafnode) {
-
 		return 0;
 	}
 

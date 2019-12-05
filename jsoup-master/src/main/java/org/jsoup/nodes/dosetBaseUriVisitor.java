@@ -9,7 +9,6 @@ public class dosetBaseUriVisitor implements DPNodeVisitor {
 	
 	@Override
 	public Object visit(Element element) {
-
 		  element.baseUri = this.baseUri;
 		  return null;
 	}

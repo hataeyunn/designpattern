@@ -1,10 +1,7 @@
 package org.jsoup.parser;
 
 import org.jsoup.helper.Validate;
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
+import org.jsoup.nodes.*;
 
 import java.io.Reader;
 import java.util.ArrayList;
@@ -31,7 +28,16 @@ abstract class TreeBuilder {
         Validate.notNull(input, "String input must not be null");
         Validate.notNull(baseUri, "BaseURI must not be null");
 
-        doc = new Document(baseUri);
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new DocumentBuilder("Document",baseUri);
+
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+
+        MakeElement factory = new MakeElement();
+
+        doc = (Document) factory.createnode(params);
         doc.parser(parser);
         this.parser = parser;
         settings = parser.settings();

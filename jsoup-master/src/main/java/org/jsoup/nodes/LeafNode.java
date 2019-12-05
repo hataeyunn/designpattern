@@ -8,6 +8,7 @@ import java.util.List;
 abstract class LeafNode extends Node {
     protected static final List<Node> EmptyNodes = Collections.emptyList();
 
+
     Object value; // either a string value, or an attribute map (in the rare case multiple attributes are set)
 
     public Object accept(DPNodeVisitor v) {

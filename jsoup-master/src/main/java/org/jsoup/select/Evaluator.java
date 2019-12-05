@@ -1,17 +1,7 @@
 package org.jsoup.select;
 
 import org.jsoup.helper.Validate;
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.Comment;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.DocumentType;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.PseudoTextElement;
-import org.jsoup.nodes.TextNode;
-import org.jsoup.nodes.XmlDeclaration;
-import org.jsoup.nodes.attributesVisitor;
-import org.jsoup.nodes.baseUriVisitor;
+import org.jsoup.nodes.*;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -765,8 +755,16 @@ public abstract class Evaluator {
 
             List<TextNode> textNodes = element.textNodes();
             for (TextNode textNode : textNodes) {
-                PseudoTextElement pel = new PseudoTextElement(
-                    org.jsoup.parser.Tag.valueOf(element.tagName()), (String)(element.accept(new baseUriVisitor())), (Attributes)(element.accept(new attributesVisitor())));
+                ElementDirector director = new ElementDirector();
+                ElementBuilder Pseudo = new PseudoTextElementBuilder("PseudoTextElement",org.jsoup.parser.Tag.valueOf(element.tagName()), (String)(element.accept(new baseUriVisitor())), (Attributes)(element.accept(new attributesVisitor())));
+
+                director.setElementBuilder(Pseudo);
+                director.constructparameter();
+                element_parameter params = director.getelement();
+
+                MakeElement factory = new MakeElement();
+
+                PseudoTextElement pel = (PseudoTextElement) factory.createnode(params);
                 textNode.replaceWith(pel);
                 pel.appendChild(textNode);
             }

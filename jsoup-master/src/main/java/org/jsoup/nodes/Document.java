@@ -5,8 +5,13 @@ import org.jsoup.helper.Validate;
 import org.jsoup.parser.ParseSettings;
 import org.jsoup.parser.Parser;
 import org.jsoup.parser.Tag;
+import org.jsoup.select.Collector;
 import org.jsoup.select.Elements;
+import org.jsoup.select.MarkNodeTraversor;
+import org.jsoup.select.NodeTraversor;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
@@ -42,7 +47,15 @@ public class Document extends Element {
     public static Document createShell(String baseUri) {
         Validate.notNull(baseUri);
 
-        Document doc = new Document(baseUri);
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new DocumentBuilder("Document",baseUri);
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+        MakeElement factory = new MakeElement();
+
+
+        Document doc =(Document) factory.createnode(params);
         doc.parser = doc.parser();
         Element html = doc.appendElement("html");
         html.appendElement("head");
@@ -152,7 +165,17 @@ public class Document extends Element {
         for (int i = toMove.size()-1; i >= 0; i--) {
             Node node = toMove.get(i);
             element.removeChild(node);
-            body().prependChild(new TextNode(" "));
+
+            LeafNodeDirector leaf = new LeafNodeDirector();
+            LeafNodeBuilder textNode = new TextNodeBuilder("TextNode"," ");
+
+            leaf.setLeafNodeBuilder(textNode);
+            leaf.constructparameter();
+            LeafNode_parameter params = leaf.getelement();
+
+            MakeLeafnode factory = new MakeLeafnode();
+
+            body().prependChild((TextNode) factory.createnode(params));
             body().prependChild(node);
         }
     }
@@ -345,14 +368,32 @@ public class Document extends Element {
                             decl.attr("version", "1.0");
                         }
                     } else {
-                        decl = new XmlDeclaration("xml", false);
+                        LeafNodeDirector leaf = new LeafNodeDirector();
+                        LeafNodeBuilder xmlDeclaration = new XmlDeclarationBuilder("XmlDeclaration","xml",false);
+                        leaf.setLeafNodeBuilder(xmlDeclaration);
+                        leaf.constructparameter();
+                        LeafNode_parameter params = leaf.getelement();
+
+                        MakeLeafnode factory = new MakeLeafnode();
+
+                        decl = (XmlDeclaration) factory.createnode(params);
+
                         decl.attr("version", "1.0");
                         decl.attr("encoding", charset().displayName());
 
                         prependChild(decl);
                     }
                 } else {
-                    XmlDeclaration decl = new XmlDeclaration("xml", false);
+                    LeafNodeDirector leaf = new LeafNodeDirector();
+                    LeafNodeBuilder xmlDeclaration = new XmlDeclarationBuilder("XmlDeclaration","xml",false);
+
+                    leaf.setLeafNodeBuilder(xmlDeclaration);
+                    leaf.constructparameter();
+                    LeafNode_parameter params = leaf.getelement();
+
+                    MakeLeafnode factory = new MakeLeafnode();
+
+                    XmlDeclaration decl = (XmlDeclaration) factory.createnode(params);
                     decl.attr("version", "1.0");
                     decl.attr("encoding", charset().displayName());
 
@@ -594,5 +635,23 @@ public class Document extends Element {
     public Document parser(Parser parser) {
         this.parser = parser;
         return this;
+    }
+
+    public void markdown(String filename) throws IOException {
+        String result = null;
+        FileWriter fw = new FileWriter(filename);
+        /*
+        for(int i=1; i<11; i++) {
+            String data = i+" 번째 줄입니다.\r\n";
+            fw.write(data);
+        }
+        */
+
+
+        Elements elements = new Elements();
+        result = MarkNodeTraversor.traverse(this);
+        fw.write(result);
+        fw.close();
+
     }
 }
