@@ -2,7 +2,7 @@ package org.jsoup.nodes;
 
 public class MakeLeafnode extends MakeFactory<LeafNode_parameter> {
     Node node = null;
-    public LeafNodeBuilder LeafBuilder;
+
     @Deprecated
     public Node createnode(LeafNode_parameter para) {
         if (para.type.equals("DataNode")) {
@@ -47,21 +47,5 @@ public class MakeLeafnode extends MakeFactory<LeafNode_parameter> {
         }
         return node;
     }
-    private void setLeafNodeBuilder (LeafNodeBuilder leafnode){
-        LeafBuilder = leafnode;
-    }
-    public parameter getelement(){
-        return LeafBuilder.getParameter();
-    }
-    public void constructparameter() {
-        LeafBuilder.createNewParameter();
-        LeafBuilder.buildbasUri();
-        LeafBuilder.buildData();
-        LeafBuilder.buildIsProcessingInstruction();
-        LeafBuilder.buildName();
-        LeafBuilder.buildPublicld();
-        LeafBuilder.buildPubsyskey();
-        LeafBuilder.buildSystemId();
-        LeafBuilder.buildText();
-    }
+
 }
