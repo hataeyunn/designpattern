@@ -86,7 +86,17 @@ public class TextNode extends LeafNode {
         String head = text.substring(0, offset);
         String tail = text.substring(offset);
         text(head);
-        TextNode tailNode = new TextNode(tail);
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder textNode = new TextNodeBuilder("TextNode",tail);
+
+        leaf.setLeafNodeBuilder(textNode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+        TextNode tailNode = (TextNode) factory.createnode(params);
+
         if (parent() != null)
             parent().addChildren(siblingIndex()+1, tailNode);
 
@@ -118,7 +128,17 @@ public class TextNode extends LeafNode {
      */
     public static TextNode createFromEncoded(String encodedText, String baseUri) {
         String text = Entities.unescape(encodedText);
-        return new TextNode(text);
+
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder textNode = new TextNodeBuilder("TextNode",text);
+
+        leaf.setLeafNodeBuilder(textNode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+        return (TextNode) factory.createnode(params);
     }
 
     /**
@@ -128,7 +148,18 @@ public class TextNode extends LeafNode {
      */
     public static TextNode createFromEncoded(String encodedText) {
         String text = Entities.unescape(encodedText);
-        return new TextNode(text);
+
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder textNode = new TextNodeBuilder("TextNode",text);
+
+        leaf.setLeafNodeBuilder(textNode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+
+        return (TextNode) factory.createnode(params);
     }
 
     static String normaliseWhitespace(String text) {

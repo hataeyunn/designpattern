@@ -1,15 +1,7 @@
 package org.jsoup.safety;
 
 import org.jsoup.helper.Validate;
-import org.jsoup.nodes.Attribute;
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.DataNode;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.TextNode;
-import org.jsoup.nodes.attributesVisitor;
-import org.jsoup.nodes.baseUriVisitor;
+import org.jsoup.nodes.*;
 import org.jsoup.parser.ParseErrorList;
 import org.jsoup.parser.Parser;
 import org.jsoup.parser.Tag;
@@ -121,11 +113,32 @@ public class Cleaner {
                 }
             } else if (source instanceof TextNode) {
                 TextNode sourceText = (TextNode) source;
-                TextNode destText = new TextNode(sourceText.getWholeText());
+
+                LeafNodeDirector leaf = new LeafNodeDirector();
+                LeafNodeBuilder textnode = new TextNodeBuilder("TextNode",sourceText.getWholeText());
+
+                leaf.setLeafNodeBuilder(textnode);
+                leaf.constructparameter();
+                LeafNode_parameter params = leaf.getelement();
+
+                MakeLeafnode factory = new MakeLeafnode();
+
+                TextNode destText = (TextNode) factory.createnode(params);
                 destination.appendChild(destText);
             } else if (source instanceof DataNode && whitelist.isSafeTag(source.parent().nodeName())) {
               DataNode sourceData = (DataNode) source;
-              DataNode destData = new DataNode(sourceData.getWholeData());
+
+              LeafNodeDirector leaf = new LeafNodeDirector();
+              LeafNodeBuilder datanode = new DataNodeBuilder("DataNode",sourceData.getWholeData());
+
+              leaf.setLeafNodeBuilder(datanode);
+              leaf.constructparameter();
+              LeafNode_parameter params = leaf.getelement();
+
+              MakeLeafnode factory = new MakeLeafnode();
+
+
+              DataNode destData = (DataNode) factory.createnode(params);
               destination.appendChild(destData);
             } else { // else, we don't care about comments, xml proc instructions, etc
                 numDiscarded++;

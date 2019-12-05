@@ -262,22 +262,63 @@ public class HtmlTreeBuilder extends TreeBuilder {
     }
 
     void insert(Token.Comment commentToken) {
-        Comment comment = new Comment(commentToken.getData());
+
+        LeafNodeDirector leafN = new LeafNodeDirector();
+        LeafNodeBuilder Comment= new CommentBuilder("Comment",commentToken.getData());
+
+        leafN.setLeafNodeBuilder(Comment);
+        leafN.constructparameter();
+        LeafNode_parameter Cparams = leafN.getelement();
+
+        MakeLeafnode Cfactory = new MakeLeafnode();
+
+        Comment comment = (Comment) Cfactory.createnode(Cparams);
         insertNode(comment);
     }
 
+    @Deprecated
     void insert(Token.Character characterToken) {
         final Node node;
         final Element el = currentElement();
         final String tagName = el.tagName();
         final String data = characterToken.getData();
 
-        if (characterToken.isCData())
-            node = new CDataNode(data);
-        else if (tagName.equals("script") || tagName.equals("style"))
-            node = new DataNode(data);
-        else
-            node = new TextNode(data);
+        if (characterToken.isCData()) {
+            LeafNodeDirector leafN = new LeafNodeDirector();
+            LeafNodeBuilder cDataNode= new CDataNodeBuilder("CDataNode",data);
+
+            leafN.setLeafNodeBuilder(cDataNode);
+            leafN.constructparameter();
+            LeafNode_parameter Cparams = leafN.getelement();
+
+            MakeLeafnode Cfactory = new MakeLeafnode();
+
+            node = (CDataNode) Cfactory.createnode(Cparams);
+        }
+        else if (tagName.equals("script") || tagName.equals("style")) {
+            LeafNodeDirector leaf = new LeafNodeDirector();
+            LeafNodeBuilder datanode = new DataNodeBuilder("DataNode",data);
+
+            leaf.setLeafNodeBuilder(datanode);
+            leaf.constructparameter();
+            LeafNode_parameter params = leaf.getelement();
+
+            MakeLeafnode factory = new MakeLeafnode();
+
+            node = (DataNode) factory.createnode(params);
+        }
+        else {
+            LeafNodeDirector leaf = new LeafNodeDirector();
+            LeafNodeBuilder textnode = new TextNodeBuilder("TextNode",data);
+
+            leaf.setLeafNodeBuilder(textnode);
+            leaf.constructparameter();
+            LeafNode_parameter params = leaf.getelement();
+
+            MakeLeafnode factory = new MakeLeafnode();
+
+            node = (TextNode) factory.createnode(params);
+        }
         el.appendChild(node); // doesn't use insertNode, because we don't foster these; and will always have a stack.
     }
 
