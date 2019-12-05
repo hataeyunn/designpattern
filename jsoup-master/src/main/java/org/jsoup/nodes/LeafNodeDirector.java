@@ -2,10 +2,10 @@ package org.jsoup.nodes;
 
 public class LeafNodeDirector {
     public LeafNodeBuilder LeafBuilder;
-    private void setLeafNodeBuilder (LeafNodeBuilder leafnode){
+    public void setLeafNodeBuilder (LeafNodeBuilder leafnode){
         LeafBuilder = leafnode;
     }
-    public parameter getelement(){
+    public LeafNode_parameter getelement(){
         return LeafBuilder.getParameter();
     }
     public void constructparameter() {

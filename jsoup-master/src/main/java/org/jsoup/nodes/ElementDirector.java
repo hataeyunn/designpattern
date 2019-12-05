@@ -2,7 +2,7 @@ package org.jsoup.nodes;
 
 public class ElementDirector {
     public ElementBuilder ElemBuilder;
-    private void setElementBuilder(ElementBuilder element){
+    public void setElementBuilder(ElementBuilder element){
         ElemBuilder = element;
     }
     public parameter getelement(){

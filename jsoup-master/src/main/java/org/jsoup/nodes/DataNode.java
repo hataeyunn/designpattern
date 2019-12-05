@@ -67,6 +67,15 @@ public class DataNode extends LeafNode {
      */
     public static DataNode createFromEncoded(String encodedData, String baseUri) {
         String data = Entities.unescape(encodedData);
-        return new DataNode(data);
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder datanode = new DataNodeBuilder("DataNode",data);
+
+        leaf.setLeafNodeBuilder(datanode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+        return (DataNode) factory.createnode(params);
     }
 }
