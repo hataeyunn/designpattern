@@ -1,6 +1,6 @@
 package org.jsoup.nodes;
 
-public abstract class MakeFactory {
+public abstract class MakeFactory<T> {
 
-    protected abstract Node createnode(parameter para);
+    protected abstract Node createnode(T params);
 }

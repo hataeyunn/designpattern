@@ -75,7 +75,7 @@ public class LeafNode_parameter extends parameter{
         return systemId;
     }
 
-    public boolean isProcessingInstruction() {
+    public boolean getisProcessingInstruction() {
         return IsProcessingInstruction;
     }
 
