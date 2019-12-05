@@ -253,7 +253,6 @@ public class HtmlTreeBuilder extends TreeBuilder {
 
         FormElement el = (FormElement) factory.createnode(params);
 
-
         setFormElement(el);
         insertNode(el);
         if (onStack)
