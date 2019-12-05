@@ -77,7 +77,16 @@ public class Comment extends LeafNode {
         XmlDeclaration decl = null;
         if (doc.children().size() > 0) {
             Element el = doc.child(0);
-            decl = new XmlDeclaration(NodeUtils.parser(doc).settings().normalizeTag(el.tagName()), data.startsWith("!"));
+            LeafNodeDirector leaf = new LeafNodeDirector();
+            LeafNodeBuilder xmlDeclaration = new XmlDeclarationBuilder("XmlDeclaration",NodeUtils.parser(doc).settings().normalizeTag(el.tagName()),data.startsWith("!"));
+
+            leaf.setLeafNodeBuilder(xmlDeclaration);
+            leaf.constructparameter();
+            LeafNode_parameter params = leaf.getelement();
+
+            MakeLeafnode factory = new MakeLeafnode();
+
+            decl = (XmlDeclaration) factory.createnode(params);
             ((Attributes)(decl.accept(new attributesVisitor()))).addAll((Attributes)(el.accept(new attributesVisitor())));
         }
         return decl;

@@ -1,14 +1,7 @@
 package org.jsoup.parser;
 
 import org.jsoup.helper.Validate;
-import org.jsoup.nodes.CDataNode;
-import org.jsoup.nodes.Comment;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.DocumentType;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.TextNode;
-import org.jsoup.nodes.XmlDeclaration;
+import org.jsoup.nodes.*;
 
 import java.io.Reader;
 import java.io.StringReader;
@@ -89,7 +82,16 @@ public class XmlTreeBuilder extends TreeBuilder {
     }
 
     void insert(Token.Comment commentToken) {
-        Comment comment = new Comment(commentToken.getData());
+        LeafNodeDirector leafN = new LeafNodeDirector();
+        LeafNodeBuilder Comment= new CommentBuilder("Comment",commentToken.getData());
+
+        leafN.setLeafNodeBuilder(Comment);
+        leafN.constructparameter();
+        LeafNode_parameter Cparams = leafN.getelement();
+
+        MakeLeafnode Cfactory = new MakeLeafnode();
+
+        Comment comment = (Comment) Cfactory.createnode(Cparams);
         Node insert = comment;
         if (commentToken.bogus && comment.isXmlDeclaration()) {
             // xml declarations are emitted as bogus comments (which is right for html, but not xml)
@@ -103,11 +105,41 @@ public class XmlTreeBuilder extends TreeBuilder {
 
     void insert(Token.Character token) {
         final String data = token.getData();
-        insertNode(token.isCData() ? new CDataNode(data) : new TextNode(data));
+
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder textnode = new TextNodeBuilder("TextNode",data);
+
+        leaf.setLeafNodeBuilder(textnode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+
+        LeafNodeDirector leafN = new LeafNodeDirector();
+        LeafNodeBuilder cDataNode= new CDataNodeBuilder("CDataNode",data);
+
+        leafN.setLeafNodeBuilder(cDataNode);
+        leafN.constructparameter();
+        LeafNode_parameter Cparams = leafN.getelement();
+
+        MakeLeafnode Cfactory = new MakeLeafnode();
+
+        insertNode(token.isCData() ? (CDataNode) Cfactory.createnode(Cparams) : (TextNode) factory.createnode(params));
     }
 
     void insert(Token.Doctype d) {
-        DocumentType doctypeNode = new DocumentType(settings.normalizeTag(d.getName()), d.getPublicIdentifier(), d.getSystemIdentifier());
+
+        LeafNodeDirector leafN = new LeafNodeDirector();
+        LeafNodeBuilder documentType= new DocumentTypeBuilder("DocumentType",settings.normalizeTag(d.getName()), d.getPublicIdentifier(), d.getSystemIdentifier());
+
+        leafN.setLeafNodeBuilder(documentType);
+        leafN.constructparameter();
+        LeafNode_parameter Cparams = leafN.getelement();
+
+        MakeLeafnode Cfactory = new MakeLeafnode();
+
+        DocumentType doctypeNode = (DocumentType) Cfactory.createnode(Cparams);
         doctypeNode.setPubSysKey(d.getPubSysKey());
         insertNode(doctypeNode);
     }

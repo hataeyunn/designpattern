@@ -25,7 +25,6 @@ public class MakeLeafnode extends MakeFactory<LeafNode_parameter> {
 
         } else if (para.type.equals("XmlDeclaration")) {
             if (para.getBaseUrl() == null) {
-
                 c = new XmlDeclaration(para.getName(), para.getisProcessingInstruction());
 
                 return c;
