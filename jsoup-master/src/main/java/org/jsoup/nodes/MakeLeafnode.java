@@ -1,5 +1,7 @@
 package org.jsoup.nodes;
 
+import javax.swing.*;
+
 public class MakeLeafnode extends MakeFactory<LeafNode_parameter> {
     DataNode a = null;
     DocumentType b = null;
@@ -7,6 +9,7 @@ public class MakeLeafnode extends MakeFactory<LeafNode_parameter> {
     CDataNode d = null;
     Comment e = null;
     TextNode f = null;
+    image g = null;
 
     @Deprecated
     public Node createnode(LeafNode_parameter para) {
@@ -52,6 +55,15 @@ public class MakeLeafnode extends MakeFactory<LeafNode_parameter> {
             } else {
                 f = new TextNode(para.getText(), para.getBaseUrl());
                 return f;
+            }
+        } else if (para.type.equals("image")){
+            if (para.getBaseUrl() == null) {
+                g = new image(para.getData());
+                return g;
+            } else {
+                g = new image(para.getData(), para.getBaseUrl());
+                return g;
+
             }
         }
         else {

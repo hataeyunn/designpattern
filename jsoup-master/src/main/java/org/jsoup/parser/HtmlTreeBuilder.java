@@ -277,7 +277,7 @@ public class HtmlTreeBuilder extends TreeBuilder {
 
     @Deprecated
     void insert(Token.Character characterToken) {
-        final Node node;
+        Node node = null;
         final Element el = currentElement();
         final String tagName = el.tagName();
         final String data = characterToken.getData();
@@ -305,6 +305,9 @@ public class HtmlTreeBuilder extends TreeBuilder {
             MakeLeafnode factory = new MakeLeafnode();
 
             node = (DataNode) factory.createnode(params);
+        }
+        else if (tagName.equals("img")) {
+            System.out.print("1");
         }
         else {
             LeafNodeDirector leaf = new LeafNodeDirector();
