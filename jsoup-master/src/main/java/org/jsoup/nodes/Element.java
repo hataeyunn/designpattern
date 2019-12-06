@@ -528,7 +528,17 @@ public class Element extends Node {
      */
     public Element appendText(String text) {
         Validate.notNull(text);
-        TextNode node = new TextNode(text);
+
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder textNode = new TextNodeBuilder("TextNode",text);
+
+        leaf.setLeafNodeBuilder(textNode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+        TextNode node = (TextNode) factory.createnode(params);
         appendChild(node);
         return this;
     }
@@ -541,7 +551,16 @@ public class Element extends Node {
      */
     public Element prependText(String text) {
         Validate.notNull(text);
-        TextNode node = new TextNode(text);
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder textNode = new TextNodeBuilder("TextNode",text);
+
+        leaf.setLeafNodeBuilder(textNode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+        TextNode node = (TextNode) factory.createnode(params);
         prependChild(node);
         return this;
     }
@@ -1185,7 +1204,17 @@ public class Element extends Node {
         Validate.notNull(text);
 
         empty();
-        TextNode textNode = new TextNode(text);
+
+        LeafNodeDirector leaf = new LeafNodeDirector();
+        LeafNodeBuilder textnode = new TextNodeBuilder("TextNode",text);
+
+        leaf.setLeafNodeBuilder(textnode);
+        leaf.constructparameter();
+        LeafNode_parameter params = leaf.getelement();
+
+        MakeLeafnode factory = new MakeLeafnode();
+
+        TextNode textNode = (TextNode) factory.createnode(params);
         appendChild(textNode);
 
         return this;

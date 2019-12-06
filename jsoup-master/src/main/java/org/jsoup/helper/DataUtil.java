@@ -3,12 +3,7 @@ package org.jsoup.helper;
 import org.jsoup.UncheckedIOException;
 import org.jsoup.internal.ConstrainableInputStream;
 import org.jsoup.internal.StringUtil;
-import org.jsoup.nodes.Comment;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.XmlDeclaration;
-import org.jsoup.nodes.childnodeSizeVisitor;
+import org.jsoup.nodes.*;
 import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
@@ -95,8 +90,15 @@ public final class DataUtil {
     }
 
     static Document parseInputStream(InputStream input, String charsetName, String baseUri, Parser parser) throws IOException  {
-        if (input == null) // empty body
-            return new Document(baseUri);
+        if (input == null) {// empty body
+            ElementDirector director = new ElementDirector();
+            ElementBuilder formbuilder = new DocumentBuilder("Document",baseUri);
+            director.setElementBuilder(formbuilder);
+            director.constructparameter();
+            element_parameter params = director.getelement();
+            MakeElement factory = new MakeElement();
+            return (Document) factory.createnode(params);
+        }
         input = ConstrainableInputStream.wrap(input, bufferSize, 0);
 
         Document doc = null;

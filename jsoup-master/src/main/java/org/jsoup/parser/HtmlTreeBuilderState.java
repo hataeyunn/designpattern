@@ -1,13 +1,7 @@
 package org.jsoup.parser;
 
 import org.jsoup.internal.StringUtil;
-import org.jsoup.nodes.Attribute;
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.DocumentType;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.attributesVisitor;
+import org.jsoup.nodes.*;
 
 import java.util.ArrayList;
 
@@ -25,8 +19,17 @@ enum HtmlTreeBuilderState {
                 // todo: parse error check on expected doctypes
                 // todo: quirk state check on doctype ids
                 Token.Doctype d = t.asDoctype();
-                DocumentType doctype = new DocumentType(
-                    tb.settings.normalizeTag(d.getName()), d.getPublicIdentifier(), d.getSystemIdentifier());
+
+                LeafNodeDirector leafN = new LeafNodeDirector();
+                LeafNodeBuilder documentType= new DocumentTypeBuilder("DocumentType",tb.settings.normalizeTag(d.getName()), d.getPublicIdentifier(), d.getSystemIdentifier());
+
+                leafN.setLeafNodeBuilder(documentType);
+                leafN.constructparameter();
+                LeafNode_parameter Cparams = leafN.getelement();
+
+                MakeLeafnode Cfactory = new MakeLeafnode();
+
+                DocumentType doctype = (DocumentType) Cfactory.createnode(Cparams);
                 doctype.setPubSysKey(d.getPubSysKey());
                 tb.getDocument().appendChild(doctype);
                 if (d.isForceQuirks())

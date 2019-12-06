@@ -47,7 +47,15 @@ public class Document extends Element {
     public static Document createShell(String baseUri) {
         Validate.notNull(baseUri);
 
-        Document doc = new Document(baseUri);
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new DocumentBuilder("Document",baseUri);
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+        MakeElement factory = new MakeElement();
+
+
+        Document doc =(Document) factory.createnode(params);
         doc.parser = doc.parser();
         Element html = doc.appendElement("html");
         html.appendElement("head");
@@ -157,7 +165,17 @@ public class Document extends Element {
         for (int i = toMove.size()-1; i >= 0; i--) {
             Node node = toMove.get(i);
             element.removeChild(node);
-            body().prependChild(new TextNode(" "));
+
+            LeafNodeDirector leaf = new LeafNodeDirector();
+            LeafNodeBuilder textNode = new TextNodeBuilder("TextNode"," ");
+
+            leaf.setLeafNodeBuilder(textNode);
+            leaf.constructparameter();
+            LeafNode_parameter params = leaf.getelement();
+
+            MakeLeafnode factory = new MakeLeafnode();
+
+            body().prependChild((TextNode) factory.createnode(params));
             body().prependChild(node);
         }
     }
@@ -350,14 +368,32 @@ public class Document extends Element {
                             decl.attr("version", "1.0");
                         }
                     } else {
-                        decl = new XmlDeclaration("xml", false);
+                        LeafNodeDirector leaf = new LeafNodeDirector();
+                        LeafNodeBuilder xmlDeclaration = new XmlDeclarationBuilder("XmlDeclaration","xml",false);
+                        leaf.setLeafNodeBuilder(xmlDeclaration);
+                        leaf.constructparameter();
+                        LeafNode_parameter params = leaf.getelement();
+
+                        MakeLeafnode factory = new MakeLeafnode();
+
+                        decl = (XmlDeclaration) factory.createnode(params);
+
                         decl.attr("version", "1.0");
                         decl.attr("encoding", charset().displayName());
 
                         prependChild(decl);
                     }
                 } else {
-                    XmlDeclaration decl = new XmlDeclaration("xml", false);
+                    LeafNodeDirector leaf = new LeafNodeDirector();
+                    LeafNodeBuilder xmlDeclaration = new XmlDeclarationBuilder("XmlDeclaration","xml",false);
+
+                    leaf.setLeafNodeBuilder(xmlDeclaration);
+                    leaf.constructparameter();
+                    LeafNode_parameter params = leaf.getelement();
+
+                    MakeLeafnode factory = new MakeLeafnode();
+
+                    XmlDeclaration decl = (XmlDeclaration) factory.createnode(params);
                     decl.attr("version", "1.0");
                     decl.attr("encoding", charset().displayName());
 

@@ -2,16 +2,7 @@ package org.jsoup.parser;
 
 import org.jsoup.helper.Validate;
 import org.jsoup.internal.StringUtil;
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.CDataNode;
-import org.jsoup.nodes.Comment;
-import org.jsoup.nodes.DataNode;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.FormElement;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.TextNode;
-import org.jsoup.nodes.attributesVisitor;
+import org.jsoup.nodes.*;
 import org.jsoup.select.Elements;
 
 import java.io.Reader;
@@ -249,7 +240,19 @@ public class HtmlTreeBuilder extends TreeBuilder {
 
     FormElement insertForm(Token.StartTag startTag, boolean onStack) {
         Tag tag = Tag.valueOf(startTag.name(), settings);
-        FormElement el = new FormElement(tag, baseUri, startTag.attributes);
+
+
+        ElementDirector director = new ElementDirector();
+        ElementBuilder formbuilder = new FormElementBuilder("FormElement",tag, baseUri, startTag.attributes);
+
+        director.setElementBuilder(formbuilder);
+        director.constructparameter();
+        element_parameter params = director.getelement();
+
+        MakeElement factory = new MakeElement();
+
+        FormElement el = (FormElement) factory.createnode(params);
+
         setFormElement(el);
         insertNode(el);
         if (onStack)
@@ -258,22 +261,66 @@ public class HtmlTreeBuilder extends TreeBuilder {
     }
 
     void insert(Token.Comment commentToken) {
-        Comment comment = new Comment(commentToken.getData());
+
+        LeafNodeDirector leafN = new LeafNodeDirector();
+        LeafNodeBuilder Comment= new CommentBuilder("Comment",commentToken.getData());
+
+        leafN.setLeafNodeBuilder(Comment);
+        leafN.constructparameter();
+        LeafNode_parameter Cparams = leafN.getelement();
+
+        MakeLeafnode Cfactory = new MakeLeafnode();
+
+        Comment comment = (Comment) Cfactory.createnode(Cparams);
         insertNode(comment);
     }
 
+    @Deprecated
     void insert(Token.Character characterToken) {
-        final Node node;
+        Node node = null;
         final Element el = currentElement();
         final String tagName = el.tagName();
         final String data = characterToken.getData();
 
-        if (characterToken.isCData())
-            node = new CDataNode(data);
-        else if (tagName.equals("script") || tagName.equals("style"))
-            node = new DataNode(data);
-        else
-            node = new TextNode(data);
+        if (characterToken.isCData()) {
+            LeafNodeDirector leafN = new LeafNodeDirector();
+            LeafNodeBuilder cDataNode= new CDataNodeBuilder("CDataNode",data);
+
+            leafN.setLeafNodeBuilder(cDataNode);
+            leafN.constructparameter();
+            LeafNode_parameter Cparams = leafN.getelement();
+
+            MakeLeafnode Cfactory = new MakeLeafnode();
+
+            node = (CDataNode) Cfactory.createnode(Cparams);
+        }
+        else if (tagName.equals("script") || tagName.equals("style")) {
+            LeafNodeDirector leaf = new LeafNodeDirector();
+            LeafNodeBuilder datanode = new DataNodeBuilder("DataNode",data);
+
+            leaf.setLeafNodeBuilder(datanode);
+            leaf.constructparameter();
+            LeafNode_parameter params = leaf.getelement();
+
+            MakeLeafnode factory = new MakeLeafnode();
+
+            node = (DataNode) factory.createnode(params);
+        }
+        else if (tagName.equals("img")) {
+            System.out.print("1");
+        }
+        else {
+            LeafNodeDirector leaf = new LeafNodeDirector();
+            LeafNodeBuilder textnode = new TextNodeBuilder("TextNode",data);
+
+            leaf.setLeafNodeBuilder(textnode);
+            leaf.constructparameter();
+            LeafNode_parameter params = leaf.getelement();
+
+            MakeLeafnode factory = new MakeLeafnode();
+
+            node = (TextNode) factory.createnode(params);
+        }
         el.appendChild(node); // doesn't use insertNode, because we don't foster these; and will always have a stack.
     }
 

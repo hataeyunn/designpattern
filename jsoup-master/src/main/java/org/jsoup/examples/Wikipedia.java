@@ -21,6 +21,7 @@ public class Wikipedia {
         doc.markdown("cookietest.md");
         for (Element headline : newsHeadlines) {
             log("%s %s\n\t%s", headline.tag().toString(), headline.attr("title"), headline.absUrl("href"));
+
         }
 
 
