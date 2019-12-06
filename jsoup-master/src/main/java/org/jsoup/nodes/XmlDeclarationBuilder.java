@@ -29,7 +29,7 @@ public class XmlDeclarationBuilder extends LeafNodeBuilder {
         para.setText(null);
     };
     public void buildName(){
-        para.setName(name);
+            para.setName(name);
     };
     public void buildPublicld(){
         para.setPublicld(null);
