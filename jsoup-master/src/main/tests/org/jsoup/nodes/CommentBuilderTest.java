@@ -8,13 +8,17 @@ public class CommentBuilderTest {
 
     @Test
     public void buildData() {
-        LeafNodeBuilder comment = new CommentBuilder("Comment", "aaa");
+        LeafNodeBuilder comment = new CommentBuilder("Comment", "data","baseuri");
         comment.createNewParameter();
         comment.buildData();
-        assertEquals("aaa",comment.getParameter().getData());
+        assertEquals("data",comment.getParameter().getData());
     }
 
     @Test
     public void buildbasUri() {
+        LeafNodeBuilder comment = new CommentBuilder("Comment", "data","baseuri");
+        comment.createNewParameter();
+        comment.buildbasUri();
+        assertEquals("baseuri",comment.getParameter().getBaseUrl());
     }
 }

@@ -24,19 +24,12 @@ public class XmlDeclarationBuilder extends LeafNodeBuilder {
     };
     public void buildbasUri(){
         para.setBaseUrl(baseUri);
-        System.out.println("baseuri");
-        System.out.println(baseUri);
     };
     public void buildText(){
         para.setText(null);
     };
     public void buildName(){
-        try {
             para.setName(name);
-        } catch(Exception e) {
-            System.out.println("name");
-            System.out.println(name);
-        }
     };
     public void buildPublicld(){
         para.setPublicld(null);
@@ -46,7 +39,5 @@ public class XmlDeclarationBuilder extends LeafNodeBuilder {
     };
     public void buildIsProcessingInstruction(){
         para.setProcessingInstruction(IsProcessingInstruction);
-        System.out.println("ispo");
-        System.out.println(IsProcessingInstruction);
     };
 }

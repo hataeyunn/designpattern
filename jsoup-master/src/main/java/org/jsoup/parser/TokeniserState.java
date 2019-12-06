@@ -105,7 +105,7 @@ enum TokeniserState {
                     t.advanceTransition(EndTagOpen);
                     break;
                 case '?':
-                    t.advanceTransition(BogusFcComment);
+                    //t.advanceTransition(BogusFcComment);
                     break;
                 default:
                     if (r.matchesLetter()) {
