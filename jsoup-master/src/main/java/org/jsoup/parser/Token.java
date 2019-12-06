@@ -77,7 +77,7 @@ abstract class Token {
         protected String normalName; // lc version of tag name, for case insensitive tree build
         private String pendingAttributeName; // attribute names are generally caught in one hop, not accumulated
         private StringBuilder pendingAttributeValue = new StringBuilder(); // but values are accumulated, from e.g. & in hrefs
-        private String pendingAttributeValueS; // try to get attr vals in one shot, vs Builder
+        protected String pendingAttributeValueS; // try to get attr vals in one shot, vs Builder
         private boolean hasEmptyAttributeValue = false; // distinguish boolean attribute from empty string value
         private boolean hasPendingAttributeValue = false;
         boolean selfClosing = false;
@@ -311,6 +311,35 @@ abstract class Token {
         }
     }
 
+    final static class image extends Character{
+        private String data;
+
+        image() {
+            super();
+            type = TokenType.Character;
+        }
+
+        @Override
+        Token reset() {
+            data = null;
+            return this;
+        }
+
+        Character data(String data) {
+            this.data = data;
+            return this;
+        }
+
+        String getData() {
+            return data;
+        }
+
+        @Override
+        public String toString() {
+            return getData();
+        }
+    }
+
     final static class CData extends Character {
         CData(String data) {
             super();
@@ -362,11 +391,16 @@ abstract class Token {
     final boolean isComment() {
         return type == TokenType.Comment;
     }
+    final boolean isImage(){
+        return type == TokenType.Image;
+    }
 
     final Comment asComment() {
         return (Comment) this;
     }
-
+    final image asImage(){
+        return (image) this;
+    }
     final boolean isCharacter() {
         return type == TokenType.Character;
     }
@@ -389,6 +423,7 @@ abstract class Token {
         EndTag,
         Comment,
         Character, // note no CData - treated in builder as an extension of Character
-        EOF
+        EOF,
+        Image
     }
 }

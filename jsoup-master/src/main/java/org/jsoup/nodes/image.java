@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public class image extends LeafNode {
     private static final String Image_key = "image";
+    private String data = null;
     public image(String data) {
         value = data;
     }
@@ -17,6 +18,9 @@ public class image extends LeafNode {
 
     public String getWholeData() {
         return coreValue();
+    }
+    public String getdata(){
+        return data;
     }
 
     void outerHtmlHead(Appendable accum, int depth, Document.OutputSettings out) throws IOException {

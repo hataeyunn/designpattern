@@ -1,12 +1,27 @@
 package org.jsoup.select;
 
 import org.jsoup.helper.Validate;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.childnodeSizeVisitor;
-import org.jsoup.nodes.markDownVisitor;
+import org.jsoup.nodes.*;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+
+
+
+
 
 public class MarkNodeTraversor{
+
     /**
      * Made by Jimin.
      * Start a depth-first traverse of the root and all of its descendants.
@@ -15,6 +30,7 @@ public class MarkNodeTraversor{
      * @return result the String from html.
      */
     public static String traverse(Node root) {
+        int count = 0;
         Node node = root;
         int depth = 0;
         String result = null;

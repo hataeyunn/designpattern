@@ -640,9 +640,10 @@ public class Document extends Element {
     public void markdown(String filename) throws IOException {
         String result = null;
         FileWriter fw = new FileWriter(filename);
+        MarkNodeTraversor a = new MarkNodeTraversor();
 
         Elements elements = new Elements();
-        result = MarkNodeTraversor.traverse(this);
+        result = a.traverse(this);
         fw.write(result);
         fw.close();
 
