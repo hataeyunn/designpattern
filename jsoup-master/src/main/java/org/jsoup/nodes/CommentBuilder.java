@@ -20,6 +20,7 @@ public class CommentBuilder extends LeafNodeBuilder {
     };
     public void buildbasUri(){
         para.setBaseUrl(baseUri);
+        System.out.println(baseUri);
     };
     public void buildText(){
         para.setText(null);

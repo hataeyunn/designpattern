@@ -18,9 +18,9 @@ public class markDownVisitor implements DPNodeVisitor{
             return "  \n![]("+element.absUrl("src").toString()+")\n";
         }else if(element.tag.toString() == "li") {
             if(element.parentNode().toString().startsWith("<ol>"))
-                return "* " + element.text() + "\n";
-            else if(element.parentNode().toString().startsWith("<ul>"))
                 return "1. " + element.text() + "\n";
+            else if(element.parentNode().toString().startsWith("<ul>"))
+                return "* " + element.text() + "\n";
             return null;
         }
         return null;
