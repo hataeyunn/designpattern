@@ -7,6 +7,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -17,10 +26,116 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/설계패턴/설계패턴_과제1/DesignPattern_4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.jsoup.nodes" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.XmlDeclarationBuilderTest.buildName">
+    <configuration name="Wikipedia" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.jsoup.examples.Wikipedia" />
+      <module name="designpattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jsoup.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentBuilderTest.buildData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="designpattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jsoup.nodes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jsoup.nodes" />
+      <option name="MAIN_CLASS_NAME" value="org.jsoup.nodes.CommentBuilderTest" />
+      <option name="METHOD_NAME" value="buildData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentBuilderTest.buildbasUri" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="designpattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jsoup.nodes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jsoup.nodes" />
+      <option name="MAIN_CLASS_NAME" value="org.jsoup.nodes.CommentBuilderTest" />
+      <option name="METHOD_NAME" value="buildbasUri" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextNodeBuilderTest.buildText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="designpattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jsoup.nodes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jsoup.nodes" />
+      <option name="MAIN_CLASS_NAME" value="org.jsoup.nodes.TextNodeBuilderTest" />
+      <option name="METHOD_NAME" value="buildText" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlDeclarationBuilderTest.buildName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="designpattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.jsoup.nodes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.jsoup.nodes" />
+      <option name="MAIN_CLASS_NAME" value="org.jsoup.nodes.XmlDeclarationBuilderTest" />
+      <option name="METHOD_NAME" value="buildName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.XmlDeclarationBuilderTest.buildName" />
+        <item itemvalue="JUnit.CommentBuilderTest.buildData" />
+        <item itemvalue="JUnit.CommentBuilderTest.buildbasUri" />
+        <item itemvalue="Application.Wikipedia" />
+        <item itemvalue="JUnit.TextNodeBuilderTest.buildText" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -44,7 +159,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575546403822</updated>
-      <workItem from="1575546405856" duration="13716000" />
+      <workItem from="1575546405856" duration="18520000" />
+      <workItem from="1575595965685" duration="4916000" />
     </task>
     <servers />
   </component>
@@ -52,18 +168,50 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1575597645262">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1575597645262" />
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1575569918788">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1575569918788" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1575549936887">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1575592878296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575549936887" />
-    <state x="279" y="115" width="616" height="528" key="find.popup" timestamp="1575577801132">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575592878296" />
+    <state width="1493" height="226" key="GridCell.Tab.0.bottom" timestamp="1575600499653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="279" y="115" width="616" height="528" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1575577801132" />
+    <state width="1493" height="226" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1575600499653" />
+    <state width="1493" height="226" key="GridCell.Tab.0.center" timestamp="1575600499653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="226" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1575600499653" />
+    <state width="1493" height="226" key="GridCell.Tab.0.left" timestamp="1575600499653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="226" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1575600499653" />
+    <state width="1493" height="226" key="GridCell.Tab.0.right" timestamp="1575600499653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="226" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1575600499653" />
+    <state x="498" y="0" key="SettingsEditor" timestamp="1575596170559">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575596170559" />
+    <state x="251" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1575593599935">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="251" y="348" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1575593599935" />
+    <state x="105" y="177" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1575599997678">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="105" y="177" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1575599997678" />
+    <state x="279" y="115" width="616" height="528" key="find.popup" timestamp="1575597816364">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="279" y="115" width="616" height="528" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1575597816364" />
     <state x="104" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1575572148139">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
