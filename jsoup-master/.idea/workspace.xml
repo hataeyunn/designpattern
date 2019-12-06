@@ -1,91 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bab8cf4d-3f21-4c7f-9298-0a3519f1608f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/imageBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/imageBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/TokeniserState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/parser/TokeniserState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/select/MarkNodeTraversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/select/MarkNodeTraversor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/examples/Wikipedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/examples/Wikipedia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$Dataset$DatasetIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$Dataset$DatasetIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$Dataset$EntrySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$Dataset$EntrySet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$Dataset.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes$Dataset.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Attributes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/Document.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/image.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/image.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/imageBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/imageBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$20.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$22.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$23.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$24.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$24.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState$Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/HtmlTreeBuilderState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$CData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$CData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$EOF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$EOF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$Tag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$TokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token$TokenType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$38.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$38.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$39.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$39.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$40.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$40.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$41.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$41.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$42.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$42.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$43.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$43.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$44.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$44.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$45.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$45.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$46.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$46.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$47.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$47.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$48.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$48.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$49.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$49.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$50.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$50.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$51.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$51.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$52.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$52.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$53.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$53.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$54.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$54.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$55.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$55.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$56.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$56.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$57.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$57.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$58.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$58.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$59.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$59.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$60.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$60.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$61.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$61.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$62.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$62.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$63.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$63.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$64.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$64.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$65.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$65.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$66.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$66.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$67.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState$67.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/parser/TokeniserState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/select/MarkNodeTraversor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/select/MarkNodeTraversor.class" afterDir="false" />
-    </list>
+    <list default="true" id="bab8cf4d-3f21-4c7f-9298-0a3519f1608f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="652" selection-start-line="652" selection-end-line="652" />
+              <caret line="645" selection-start-line="645" selection-end-line="645" />
               <folding>
                 <element signature="e#14935#14936#0" expanded="true" />
                 <element signature="e#14991#14992#0" expanded="true" />
@@ -151,16 +67,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attributes.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="285">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -174,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/imageBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="342">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#486#487#0" expanded="true" />
@@ -199,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/markDownVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -401,7 +317,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575645006595" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575645770877" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -529,7 +445,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40886000" />
+    <option name="totallyTimeSpent" value="41425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1176,7 +1092,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="652" selection-start-line="652" selection-end-line="652" />
+          <caret line="645" selection-start-line="645" selection-end-line="645" />
           <folding>
             <element signature="e#14935#14936#0" expanded="true" />
             <element signature="e#14991#14992#0" expanded="true" />
@@ -1188,17 +1104,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/markDownVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1229,7 +1138,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Attributes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1238,8 +1147,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/imageBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="342">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#486#487#0" expanded="true" />
@@ -1247,6 +1156,13 @@
             <element signature="e#552#553#0" expanded="true" />
             <element signature="e#592#593#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
         </state>
       </provider>
     </entry>
