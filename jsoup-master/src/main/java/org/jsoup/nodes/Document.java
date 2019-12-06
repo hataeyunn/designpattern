@@ -641,13 +641,6 @@ public class Document extends Element {
         String result = null;
         FileWriter fw = new FileWriter(filename);
         MarkNodeTraversor a = new MarkNodeTraversor();
-        /*
-        for(int i=1; i<11; i++) {
-            String data = i+" 번째 줄입니다.\r\n";
-            fw.write(data);
-        }
-        */
-
 
         Elements elements = new Elements();
         result = a.traverse(this);
