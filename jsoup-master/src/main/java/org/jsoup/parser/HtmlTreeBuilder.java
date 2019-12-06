@@ -86,7 +86,6 @@ public class HtmlTreeBuilder extends TreeBuilder {
 
             // initialise the tokeniser state:
             String contextTag = context.tagName();
-            System.out.println(contextTag);
             if (StringUtil.in(contextTag, "title", "textarea"))
                 tokeniser.transition(TokeniserState.Rcdata);
             else if (StringUtil.in(contextTag, "iframe", "noembed", "noframes", "style", "xmp"))
@@ -97,6 +96,8 @@ public class HtmlTreeBuilder extends TreeBuilder {
                 tokeniser.transition(TokeniserState.Data); // if scripting enabled, rawtext
             else if (contextTag.equals("plaintext"))
                 tokeniser.transition(TokeniserState.Data);
+            else if (contextTag.equals("img"))
+                tokeniser.transition((TokeniserState.Data));
             else
                 tokeniser.transition(TokeniserState.Data); // default
 
@@ -222,6 +223,33 @@ public class HtmlTreeBuilder extends TreeBuilder {
         insertNode(el);
         stack.add(el);
     }
+    Element insertImg(Token.StartTag img){
+        LeafNodeDirector leafN = new LeafNodeDirector();
+        LeafNodeBuilder Image = new imageBuilder("image",img.attributes.getVals());
+
+        leafN.setLeafNodeBuilder(Image);
+        leafN.constructparameter();
+        LeafNode_parameter Cparams = leafN.getelement();
+
+        MakeLeafnode Cfactory = new MakeLeafnode();
+
+        image comment = (image) Cfactory.createnode(Cparams);
+        insertNode(comment);
+
+        Tag tag = Tag.valueOf(img.name(), settings);
+        Element el = new Element(tag, baseUri, img.attributes);
+        insertNode(el);
+        if (img.isSelfClosing()) {
+            if (tag.isKnownTag()) {
+                if (!tag.isEmpty())
+                    tokeniser.error("Tag cannot be self closing; not a void tag");
+            }
+            else // unknown tag, remember this is self closing for output
+                tag.setSelfClosing();
+        }
+        return el;
+
+    }
 
     Element insertEmpty(Token.StartTag startTag) {
         Tag tag = Tag.valueOf(startTag.name(), settings);
@@ -274,6 +302,20 @@ public class HtmlTreeBuilder extends TreeBuilder {
         Comment comment = (Comment) Cfactory.createnode(Cparams);
         insertNode(comment);
     }
+    void insert(Token.image imageToken) {
+
+        LeafNodeDirector leafN = new LeafNodeDirector();
+        LeafNodeBuilder Comment= new CommentBuilder("Comment",imageToken.getData());
+
+        leafN.setLeafNodeBuilder(Comment);
+        leafN.constructparameter();
+        LeafNode_parameter Cparams = leafN.getelement();
+
+        MakeLeafnode Cfactory = new MakeLeafnode();
+
+        Comment comment = (Comment) Cfactory.createnode(Cparams);
+        insertNode(comment);
+    }
 
     @Deprecated
     void insert(Token.Character characterToken) {
@@ -307,7 +349,6 @@ public class HtmlTreeBuilder extends TreeBuilder {
             node = (DataNode) factory.createnode(params);
         }
         else if (tagName.equals("img")) {
-            System.out.print("1");
         }
         else {
             LeafNodeDirector leaf = new LeafNodeDirector();

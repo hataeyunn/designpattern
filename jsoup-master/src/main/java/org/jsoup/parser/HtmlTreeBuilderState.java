@@ -48,7 +48,9 @@ enum HtmlTreeBuilderState {
             if (t.isDoctype()) {
                 tb.error(this);
                 return false;
-            } else if (t.isComment()) {
+            }
+
+            else if (t.isComment()) {
                 tb.insert(t.asComment());
             } else if (isWhitespace(t)) {
                 return true; // ignore whitespace
@@ -280,6 +282,7 @@ enum HtmlTreeBuilderState {
                     return false;
                 }
                 case StartTag:
+
                     Token.StartTag startTag = t.asStartTag();
                     // todo - refactor to a switch statement
                     String name = startTag.normalName();
@@ -298,7 +301,13 @@ enum HtmlTreeBuilderState {
                         tb.reconstructFormattingElements();
                         Element a = tb.insert(startTag);
                         tb.pushActiveFormattingElements(a);
-                    } else if (StringUtil.inSorted(name, Constants.InBodyStartEmptyFormatters)) {
+                    }
+                  else if(name.equals("img")){
+                  tb.reconstructFormattingElements();
+                  tb.insertImg(startTag);
+                 tb.framesetOk(false);
+                 }
+                    else if (StringUtil.inSorted(name, Constants.InBodyStartEmptyFormatters)) {
                         tb.reconstructFormattingElements();
                         tb.insertEmpty(startTag);
                         tb.framesetOk(false);

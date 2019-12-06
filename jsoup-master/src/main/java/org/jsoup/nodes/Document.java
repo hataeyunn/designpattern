@@ -640,6 +640,7 @@ public class Document extends Element {
     public void markdown(String filename) throws IOException {
         String result = null;
         FileWriter fw = new FileWriter(filename);
+        MarkNodeTraversor a = new MarkNodeTraversor();
         /*
         for(int i=1; i<11; i++) {
             String data = i+" 번째 줄입니다.\r\n";
@@ -649,7 +650,7 @@ public class Document extends Element {
 
 
         Elements elements = new Elements();
-        result = MarkNodeTraversor.traverse(this);
+        result = a.traverse(this);
         fw.write(result);
         fw.close();
 

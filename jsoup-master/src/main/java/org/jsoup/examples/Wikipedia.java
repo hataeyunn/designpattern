@@ -12,9 +12,9 @@ import java.io.IOException;
  */
 public class Wikipedia {
     public static void main(String[] args) throws IOException {
-        Document doc = Jsoup.connect("http://en.wikipedia.org/").get();
-        log(doc.title());
+        Document doc = Jsoup.connect("http://34.84.237.242:8080/test3").get();
 
+        doc.markdown("hi");
         Elements newsHeadlines = doc.select("#mp-itn b a");
         for (Element headline : newsHeadlines) {
             log("%s\n\t%s", headline.attr("title"), headline.absUrl("href"));

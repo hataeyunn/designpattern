@@ -1,6 +1,6 @@
 package org.jsoup.parser;
 
-import org.jsoup.nodes.DocumentType;
+import org.jsoup.nodes.*;
 
 /**
  * States and transition activations for the Tokeniser.
@@ -742,7 +742,17 @@ enum TokeniserState {
                 t.tagPending.appendAttributeValue(value);
             else
                 t.tagPending.setEmptyAttributeValue();
+            if(t.tagPending.tagName.equals("img")){
 
+                LeafNodeDirector leaf = new LeafNodeDirector();
+                LeafNodeBuilder image = new imageBuilder("image",value.toString());
+                leaf.setLeafNodeBuilder(image);
+                leaf.constructparameter();
+                LeafNode_parameter params = leaf.getelement();
+
+                MakeLeafnode factory = new MakeLeafnode();
+                org.jsoup.nodes.image a  = (image) factory.createnode(params);
+            }
             char c = r.consume();
             switch (c) {
                 case '"':

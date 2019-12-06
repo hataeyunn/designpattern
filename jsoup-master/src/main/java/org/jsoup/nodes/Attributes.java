@@ -43,6 +43,11 @@ public class Attributes implements Iterable<Attribute>, Cloneable {
 
     private int size = 0; // number of slots used (not capacity, which is keys.length
     String[] keys = Empty;
+
+    public String getVals() {
+        return vals[0];
+    }
+
     String[] vals = Empty;
 
     // check there's room for more
