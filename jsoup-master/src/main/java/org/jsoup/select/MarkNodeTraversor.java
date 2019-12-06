@@ -37,14 +37,15 @@ public class MarkNodeTraversor{
         String content = null;
 
         while (node != null) {
-            content = ((String) (node.accept(new markDownVisitor())));
-            if(content != null) {
-                if (result != null) {
-                    result = result + content;
-                } else
-                    result = "" + content;
+            if(!(node instanceof image)) {
+                content = ((String) (node.accept(new markDownVisitor())));
+                if (content != null) {
+                    if (result != null) {
+                        result = result + content;
+                    } else
+                        result = "" + content;
+                }
             }
-
             if (((int)(node.accept(new childnodeSizeVisitor()))) > 0) {
                 node = node.childNode(0);
                 depth++;
