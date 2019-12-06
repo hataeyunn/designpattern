@@ -12,13 +12,23 @@ import java.io.IOException;
  */
 public class Wikipedia {
     public static void main(String[] args) throws IOException {
-        Document doc = Jsoup.connect("http://en.wikipedia.org/").get();
-        log(doc.title());
+        Document doc = Jsoup.connect("http://34.84.237.242:8080/test3").get();
+        //log(doc.title());
 
-        Elements newsHeadlines = doc.select("#mp-itn b a");
+        // Elements newsHeadlines = doc.select("#mp-itn b a");
+        Elements newsHeadlines = doc.select("h1");
+        // Make markdown method.
+        doc.markdown("cookietest.md");
         for (Element headline : newsHeadlines) {
-            log("%s\n\t%s", headline.attr("title"), headline.absUrl("href"));
+            log("%s %s\n\t%s", headline.tag().toString(), headline.attr("title"), headline.absUrl("href"));
         }
+
+
+        for(Element element: newsHeadlines) {
+            System.out.println(element.text());
+        }
+
+
     }
 
     private static void log(String msg, String... vals) {
