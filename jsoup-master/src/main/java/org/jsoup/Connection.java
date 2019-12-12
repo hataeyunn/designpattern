@@ -1,9 +1,9 @@
-package org.jsoup;
+package src.main.java.org.jsoup;
 
-import org.jsoup.nodes.Document;
-import org.jsoup.parser.Parser;
+import src.main.java.org.jsoup.nodes.Document;
+import src.main.java.org.jsoup.parser.Parser;
 
-import javax.net.ssl.SSLSocketFactory;
+import src.main.javax.net.ssl.SSLSocketFactory;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
