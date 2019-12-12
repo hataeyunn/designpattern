@@ -25,6 +25,10 @@ public class LeafNodeBuilderTest {
 
     @BeforeClass
     public static void MakeInstance() throws Exception{
+
+
+
+        s
         test_CDatanode = new CDataNodeBuilder("CDataNode","a");
         test_Datanode = new DataNodeBuilder("DataNode","a","b");
         test_Image = new imageBuilder("image","a");
