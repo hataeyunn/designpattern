@@ -21,7 +21,7 @@ public class markDownVisitor implements DPNodeVisitor{
             return "<br/>\n\n";
         }else if(element.tag.toString() == "img") {
             StoreImage(element.absUrl("src").toString());
-            return "  \n![](./image.jpg)\n";
+            return "  \n![](./"+element.absUrl("src").toString()+")\n";
         }else if(element.tag.toString() == "li") {
             if(element.parentNode().toString().startsWith("<ol>"))
                 return "1. " + element.text() + "\n";

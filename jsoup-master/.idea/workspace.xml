@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bab8cf4d-3f21-4c7f-9298-0a3519f1608f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/imageBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/imageBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/markDownVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/markDownVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/markDownVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/nodes/markDownVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/jsoup/select/MarkNodeTraversor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/jsoup/select/MarkNodeTraversor.class" afterDir="false" />
-    </list>
+    <list default="true" id="bab8cf4d-3f21-4c7f-9298-0a3519f1608f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="304">
+              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -57,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/markDownVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="66" lean-forward="true" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+            <state relative-caret-position="285">
+              <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -221,10 +215,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/parser/TokeniserState.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/Document.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/select/MarkNodeTraversor.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/imageBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/jsoup/nodes/markDownVisitor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java" />
       </list>
     </option>
   </component>
@@ -439,12 +433,12 @@
       <workItem from="1575534838868" duration="4692000" />
       <workItem from="1575570210038" duration="6156000" />
       <workItem from="1575836609245" duration="5079000" />
-      <workItem from="1576088796539" duration="2063000" />
+      <workItem from="1576088796539" duration="2485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48885000" />
+    <option name="totallyTimeSpent" value="49307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1314,13 +1308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/image.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1361,11 +1348,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/nodes/markDownVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="66" lean-forward="true" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+        <state relative-caret-position="285">
+          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/jsoup/examples/Wikipedia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
         </state>
       </provider>
     </entry>
