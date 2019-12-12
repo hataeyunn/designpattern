@@ -120,9 +120,17 @@ public class markDownVisitorTest {
         }
 
         LeafNode test_leaf = null;
+        for(int i=0; i<leafnodes.size(); i++) {
+
+            String thiscontent = leafnode.value.toString();
+            if(leafnode.parentNode().toString().startsWith("<body>")&&!thiscontent.equals("")&&thiscontent!=null){
+                test_leaf = (LeafNode) leafnodes.get(i);
+            }
+        }
 
 
-        assertEquals(expected,test_visitor.visit(test_leaf));
+        assertEquals("  \n태윤:공룡쿠키잘만들었어요^^",test_visitor.visit(test_leaf));
     }
-*/
+    */
+ 
 }
