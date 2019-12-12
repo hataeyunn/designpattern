@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jsoup:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/jsoup_jar</output-path>
+    <root id="archive" name="jsoup.jar">
+      <element id="module-output" name="jsoup" />
+    </root>
+  </artifact>
+</component>

@@ -1,5 +1,10 @@
 package org.jsoup.nodes;
 
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+
 public class markDownVisitor implements DPNodeVisitor{
 
     @Override
@@ -15,7 +20,8 @@ public class markDownVisitor implements DPNodeVisitor{
         }else if(element.tag.toString() == "br") {
             return "<br/>\n\n";
         }else if(element.tag.toString() == "img") {
-            return "  \n![]("+element.absUrl("src").toString()+")\n";
+            StoreImage(element.absUrl("src").toString());
+            return "  \n![](./image.jpg)\n";
         }else if(element.tag.toString() == "li") {
             if(element.parentNode().toString().startsWith("<ol>"))
                 return "1. " + element.text() + "\n";
@@ -35,5 +41,39 @@ public class markDownVisitor implements DPNodeVisitor{
                 return "  \n" + content;
         }
         return null;
+    }
+    public void StoreImage(String _url){
+        URL url = null;
+        InputStream in = null;
+        OutputStream out = null;
+
+        try {
+
+            url = new URL(_url);
+
+            in = url.openStream();
+
+
+            out = new FileOutputStream("image"+".jpg");
+
+            while(true){
+                //이미지를 읽어온다.
+                int data = in.read();
+                if(data == -1){
+                    break;
+                }
+                //이미지를 쓴다.
+                out.write(data);
+
+            }
+
+            in.close();
+            out.close();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
     }
 }
