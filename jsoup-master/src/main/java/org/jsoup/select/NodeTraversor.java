@@ -1,5 +1,6 @@
 package org.jsoup.select;
 
+//import jdk.nashorn.internal.ir.debug.PrintVisitor;
 import org.jsoup.helper.Validate;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
@@ -47,16 +48,22 @@ public class NodeTraversor {
             if (((int)(node.accept(new childnodeSizeVisitor()))) > 0) {
                 node = node.childNode(0);
                 depth++;
+
             } else {
                 while (node.nextSibling() == null && depth > 0) {
                     visitor.tail(node, depth);
                     node = node.parentNode();
                     depth--;
+
+
                 }
                 visitor.tail(node, depth);
-                if (node == root)
+                if (node == root) {
                     break;
+                }
                 node = node.nextSibling();
+
+
             }
         }
     }
